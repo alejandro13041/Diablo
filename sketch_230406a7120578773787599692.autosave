@@ -1,0 +1,56 @@
+
+
+//#include "Menu.h"
+#include "Plane.h"
+#include "Slot.h"
+
+
+void setup(){
+
+   fullScreen();
+   
+   background(255,255,255);
+   
+  
+   int tamaño_reticula = 172;
+ 
+   
+ lineas_verticales(tamaño_reticula);
+ diagonales_derechas(tamaño_reticula);
+ diagonales_isquierdas(tamaño_reticula);
+   menu();
+  experience_bar();
+  
+}
+int largo = 0;
+
+float sizeSlotExperienceX = ((width_experienceBar-(numberSlots+1)*space)/10);
+
+void slot(float x1){
+
+  
+  int y1 = (height - 148 );
+  fill(222,205,20);  
+  if (largo <= sizeSlotExperienceX) {    
+    rect(x1+2,y1+2,largo,16);
+    largo++;
+    delay(150);
+
+   }
+ }
+
+void draw(){  
+ 
+ float x1 = ((width/2)-196);
+ slot(x1);
+
+  for (int i = 0; i == 10; i++) {
+    slot(x1+2+(sizeSlotExperienceX)*i);
+
+  }
+ 
+
+    
+   
+  
+ }
